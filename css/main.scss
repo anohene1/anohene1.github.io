@@ -1,8 +1,30 @@
+@font-face {
+  font-family: 'gilroy-bold';
+  src: url('fonts/webfontkit/gilroy-bold-webfont.woff2') format('woff2'),
+  url('fonts/webfontkit/gilroy-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'gilroy-regular';
+  src: url('fonts/webfontkit/gilroy-regular-webfont.woff2') format('woff2'),
+  url('fonts/webfontkit/gilroy-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
 body{
   margin: 0;
   padding: 0;
-  font-family: Gilroy-Regular;
+  font-family: gilroy-regular, sans-serif;
   color: white;
+  text-align: center;
 }
 
 p{
@@ -12,6 +34,7 @@ p{
 
 h2{
   font-size: 60px;
+  margin: 0;
 }
 
 #landing{
@@ -24,7 +47,7 @@ h2{
   background-size: cover;
 
   h1{
-    font-family: Gilroy-Bold;
+    font-family: gilroy-bold, sans-serif;
     font-size: 300px;
     margin: 0;
     line-height: 300px;
@@ -50,6 +73,7 @@ h2{
     display: grid;
     place-items: center;
     background-color: #060039;
+    text-align: left;
 
     p{
       width: 90%;
@@ -67,6 +91,7 @@ h2{
     display: grid;
     place-items: center;
     background-color: #DA774A;
+    margin: 0!important;
   }
 
   .skills-pages{
@@ -98,6 +123,7 @@ h2{
     display: grid;
     place-items: center;
     background-color: #7A4865;
+    margin: 0!important;
   }
 
   .languages-pages{
@@ -137,36 +163,41 @@ h2{
     display: grid;
     place-items: center;
     background-color: #2E39A9;
+    margin: 0!important;
   }
 
   .projects-pages{
     width: 50%;
     color: black;
 
-    .card{
-      border-radius: 10px;
-      box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
-    }
 
-    div{
+    .wrapper{
       height: 100vh;
       display: grid;
-      grid-template-rows: 1fr 50px 50px;
+      grid-template-rows: 1fr 50px 70px;
+      grid-template-areas: "image" "title" "desc";
       place-items: center;
       border-bottom: 1px solid black;
       //overflow: scroll;
 
-      //img{
-      //  max-width: 600px;
-      //  max-height: 500px;
-      //}
+        .image{
+          grid-area: image;
+
+
+          img{
+            width: 100%;
+            // height: 100%;
+          }
+        }
 
       h3{
+        grid-area: title;
         font-size: 40px;
         margin: 0;
       }
 
       p{
+        grid-area: desc;
         font-size: 25px;
         margin: 0;
         text-align: center;
@@ -189,28 +220,221 @@ h2{
     background-color: #463C74;
     display: grid;
     place-items: center;
+    margin: 0!important;
   }
 
   .contact-pages{
     height: 100vh;
     width: 50%;
-    background-color: #BA1ED6;
+    background-color: #26282B;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    a{
+      text-decoration: none;
+    }
+
+    .social-button{
+      height: 90px;
+      width: 90px;
+      border-radius: 50%;
+      background: #26282B;
+      box-shadow: 5px 5px 10px #0f1011, -5px -5px 10px #3d4045;
+      transition: all 0.5s ease;
+      display: grid;
+      place-items: center;
+      font-size: 40px;
+      color: white;
+
+
+      &:hover{
+        background: linear-gradient(145deg, #1a1b1d, #292b2e);;
+      }
+    }
   }
 }
 //
-//@media (max-height: 810px) {
-//
-//  #projects{
-//
-//    .projects-pages{
-//
-//      img{
-//        //width: 50%;
-//        //height: 90%;
-//      }
-//
-//    }
-//
-//  }
-//
-//}
+@media (max-height: 825px) {
+
+  #projects{
+
+    .projects-pages{
+
+      .wrapper{
+
+        .image{
+
+          img{
+            height: 70vh;
+            width: auto;
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+
+@media (max-width: 1366px) {
+
+  #landing{
+    h1{
+      font-size: 8rem;
+      line-height: 8rem;
+    }
+
+    p{
+      font-size: 1.7rem;
+    }
+  }
+
+  h2{
+    font-size: 1.5rem;
+  }
+
+  p{
+    font-size: 1.5rem;
+  }
+
+ #about{
+   height: 100%;
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: 0.1fr 1fr;
+
+   .about-title{
+     //width: 100%;
+     height: 10vh;
+
+   }
+
+   .about-pages{
+     //width: 100%;
+     height: 90vh;
+
+
+   }
+ }
+
+  #skills{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10vh 45vh 45vh;
+
+    .skills-pages{
+      width: 100%;
+
+      div{
+        height: 45vh;
+      }
+    }
+
+    .skills-title{
+      width: 100%;
+      height: 10vh;
+    }
+  }
+
+  #languages{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10vh 45vh 45vh 45vh 45vh;
+
+    .languages-title{
+      width: 100%;
+      height: 10vh;
+    }
+
+    .languages-pages{
+      width: 100%;
+
+      div{
+        height: 45vh;
+      }
+    }
+  }
+
+  #projects{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10vh repeat(7, 45vh);
+    margin-bottom: 90px;
+
+    .projects-title{
+      width: 100%;
+      height: 10vh;
+    }
+
+    .projects-pages{
+      width: 100%;
+      border: none;
+
+      .wrapper{
+        height: 45vh;
+        margin: 10px auto;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+        width: 90%;
+
+        h3{
+          font-size: 1.5rem;
+        }
+
+        p{
+          font-size: 1rem;
+        }
+
+        .image{
+          img{
+            height: 23vh;
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+
+  #contact{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 1fr;
+
+    .contact-title{
+      width: 100%;
+      height: 10vh;
+
+      h2{
+        font-size: 2rem;
+      }
+    }
+
+    .contact-pages{
+      width: 100%;
+      height: 90vh;
+      display: grid;
+      grid-template-rows: repeat(5, 1fr);
+
+
+      p{
+        font-size: 1.5rem;
+      }
+
+      .social-button{
+        height: 70px;
+        width: 70px;
+        font-size: 30px;
+      }
+    }
+  }
+
+}
