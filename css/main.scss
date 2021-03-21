@@ -46,11 +46,39 @@ h2{
   background-image: url("../images/pattern.svg");
   background-size: cover;
 
-  h1{
+  svg {
+    margin-top: -10%;
+    margin-bottom: -20%;
+  }
+
+  svg text{
     font-family: gilroy-bold, sans-serif;
     font-size: 300px;
     margin: 0;
-    line-height: 300px;
+    //line-height: 300px;
+
+    stroke: white;
+    stroke-width: 5;
+    animation: textAnimation 1s linear, fillText 1s ease forwards 1s;
+  }
+}
+
+@keyframes textAnimation {
+  from {
+    stroke-dasharray: 0 50%;
+  }
+
+  to {
+    stroke-dasharray: 50% 0;
+  }
+}
+
+@keyframes fillText {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: white;
   }
 }
 
