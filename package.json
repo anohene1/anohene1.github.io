@@ -1,0 +1,24 @@
+{
+  "name": "anohene1.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:sass": "node-sass css/main.scss css/styles.css -w",
+    "start": "npm run watch:sass & live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anohene1/anohene1.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anohene1/anohene1.github.io/issues"
+  },
+  "homepage": "https://github.com/anohene1/anohene1.github.io#readme",
+  "dependencies": {
+    "node-sass": "^6.0.1"
+  }
+}

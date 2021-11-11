@@ -19,6 +19,14 @@
 
 }
 
+html {
+  font-size: 62.5%;
+
+  @media (max-width: 1250px) {
+    font-size: 50%;
+  }
+}
+
 body{
   margin: 0;
   padding: 0;
@@ -28,12 +36,12 @@ body{
 }
 
 p{
-  font-size: 40px;
+  font-size: 4rem;
   margin: 0;
 }
 
 h2{
-  font-size: 60px;
+  font-size: 6rem;
   margin: 0;
 }
 
@@ -53,7 +61,7 @@ h2{
 
   svg text{
     font-family: gilroy-bold, sans-serif;
-    font-size: 300px;
+    font-size: 30rem;
     margin: 0;
     //line-height: 300px;
 
@@ -113,6 +121,10 @@ h2{
   height: 200vh;
   display: flex;
 
+  @media (max-aspect-ratio: 10/7){
+    height: 100vh;
+  }
+
   .skills-title{
     width: 50%;
     height: 100vh;
@@ -130,6 +142,10 @@ h2{
       display: grid;
       place-items: center;
 
+      @media (max-aspect-ratio: 10/7){
+        height: 50vh;
+      }
+
       &:nth-child(1){
         background-color: #E53855;
       }
@@ -144,6 +160,10 @@ h2{
 #languages{
   height: 400vh;
   display: flex;
+
+  @media (max-aspect-ratio: 10/7){
+    height: 200vh;
+  }
 
   .languages-title{
     width: 50%;
@@ -161,6 +181,10 @@ h2{
       height: 100vh;
       display: grid;
       place-items: center;
+
+      @media (max-aspect-ratio: 10/7){
+        height: 50vh;
+      }
 
       &:nth-child(1){
         background-color: #FE5E33;
@@ -182,8 +206,12 @@ h2{
 }
 
 #projects{
-  height: 700vh;
+  height: 800vh;
   display: flex;
+
+  @media (max-aspect-ratio: 10/7){
+    height: 350vh;
+  }
 
   .projects-title{
     height: 100vh;
@@ -202,31 +230,85 @@ h2{
     .wrapper{
       height: 100vh;
       display: grid;
-      grid-template-rows: 1fr 50px 70px;
+      grid-template-rows: 1fr 50px max-content;
       grid-template-areas: "image" "title" "desc";
       place-items: center;
-      border-bottom: 1px solid black;
-      //overflow: scroll;
+      //border-bottom: 1px solid black;
+      //padding: 0 30px;
+      overflow: hidden;
+
+      @media (max-aspect-ratio: 10/7){
+        height: 50vh;
+      }
+
+      &:nth-child(1) {
+        background-color: #9FA3AE;
+      }
+
+      &:nth-child(2) {
+        background-color: #BCC9B9;
+      }
+
+      &:nth-child(3) {
+        background-color: #272734;
+        color: white;
+
+
+        img {
+          height: 70rem;
+          width: 100%;
+        }
+      }
+
+      &:nth-child(4) {
+        background-color: #89B2BB;
+      }
+
+      &:nth-child(5) {
+        background-color: #d3cdc7;
+      }
+
+      &:nth-child(6) {
+        background-color: #CDD4DD;
+      }
+
+      &:nth-child(7) {
+        background-color: #D4D4D4;
+      }
+
+      &:nth-child(8) {
+        background-color: #E8E4F3;
+      }
 
         .image{
+          height: 100%;
+          width: 100%;
           grid-area: image;
-
+          display: grid;
+          place-items: center;
 
           img{
-            width: 100%;
-            // height: 100%;
+            width: 50vw;
+            height: auto;
+            transition: transform 1s;
+
+            &:hover {
+              transform: scale(1.1);
+            }
           }
         }
 
       h3{
         grid-area: title;
-        font-size: 40px;
+        font-size: 4rem;
         margin: 0;
       }
 
       p{
         grid-area: desc;
-        font-size: 25px;
+        font-size: 2.5rem;
+        padding: 0 15px;
+        padding-bottom: 4rem;
         margin: 0;
         text-align: center;
       }
@@ -283,50 +365,52 @@ h2{
   }
 }
 //
-@media (max-height: 825px) {
+//@media (max-height: 825px) {
+//
+//  #projects{
+//
+//    .projects-pages{
+//
+//      .wrapper{
+//
+//        .image{
+//
+//          img{
+//            height: 70vh;
+//            width: auto;
+//          }
+//
+//        }
+//
+//      }
+//
+//    }
+//
+//  }
+//
+//}
 
-  #projects{
 
-    .projects-pages{
 
-      .wrapper{
-
-        .image{
-
-          img{
-            height: 70vh;
-            width: auto;
-          }
-
-        }
-
-      }
-
-    }
-
-  }
-
-}
-
-@media (max-width: 1366px) {
+@media (max-width: 960px) {
 
   #landing{
     h1{
-      font-size: 8rem;
+      font-size: 10rem;
       line-height: 8rem;
     }
 
     p{
-      font-size: 1.7rem;
+      font-size: 2.5rem;
     }
   }
 
   h2{
-    font-size: 1.5rem;
+    font-size: 3rem;
   }
 
   p{
-    font-size: 1.5rem;
+    font-size: 2.5rem;
   }
 
  #about{
@@ -393,7 +477,7 @@ h2{
     height: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 10vh repeat(7, 45vh);
+    grid-template-rows: 10vh repeat(8, 45vh);
     margin-bottom: 90px;
 
     .projects-title{
@@ -410,21 +494,27 @@ h2{
         margin: 10px auto;
         border: none;
         border-radius: 10px;
-        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+        box-shadow: 15px 10px 30px rgba(0, 0, 0, 0.2);
         width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+
 
         h3{
-          font-size: 1.5rem;
+          font-size: 2.5rem;
+          padding-bottom: 1rem;
         }
 
         p{
-          font-size: 1rem;
+          font-size: 1.8rem;
+          padding-bottom: 2rem;
         }
 
         .image{
           img{
-            height: 23vh;
-            width: auto;
+            height: auto;
+            width: 100%;
           }
         }
       }
@@ -466,3 +556,4 @@ h2{
   }
 
 }
+
